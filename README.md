@@ -14,6 +14,50 @@
 <script>
   gtag('event', 'conversion', {'send_to': 'AW-16970635311/svaUCJPdiIAdEK-wnZw_'});
 </script>
+<!-- Event snippet for Get directions conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-16970635311/gFXNCJbdiIAdEK-wnZw_'});
+</script>
+<!-- Event snippet for Contact conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-16970635311/30c6CJndiIAdEK-wnZw_'});
+</script>
+<!-- Event snippet for Add to cart conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-16970635311/JNy4CJzdiIAdEK-wnZw_'});
+</script>
+<!-- Event snippet for Begin checkout conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-16970635311/RKt9CJ_diIAdEK-wnZw_'});
+</script>
+<!-- Event snippet for Subscribe conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-16970635311/9YNCCKLdiIAdEK-wnZw_'});
+</script>
+<!-- Event snippet for Book appointment conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-16970635311/2D1DCMzYjoAdEK-wnZw_'});
+</script>
+<!-- Event snippet for Outbound click conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-16970635311/QemqCM_YjoAdEK-wnZw_'});
+</script>
+<!-- Event snippet for Page view conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-16970635311/QtcHCNLYjoAdEK-wnZw_'});
+</script>
+<!-- Event snippet for Submit lead form conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-16970635311/arrGCNXYjoAdEK-wnZw_'});
+</script>
+<!-- Event snippet for Purchase conversion page -->
+<script>
+  gtag('event', 'conversion', {
+      'send_to': 'AW-16970635311/Ruo2CNjYjoAdEK-wnZw_',
+      'transaction_id': ''
+      // 'new_customer': true /* calculate dynamically, populate with true/false */,
+  });
+</script>
   <meta name="google-site-verification" content="z11_GCFdA35Dy1fuy4dwTMCMZ76gstIOUqAMsWB5c9A" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
