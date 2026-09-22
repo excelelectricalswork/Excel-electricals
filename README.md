@@ -604,36 +604,58 @@
     Located in Choondy, Aluva, <strong>Excel Electricals</strong> is a trusted workshop specializing in high-quality electric motor winding, stator rewinding, rotor servicing, and electrical component repairs. With years of hands-on expertise, we deliver fast, reliable, and durable repair solutions for industrial, commercial, and residential motors.
   </p>
 </section>
-<!-- CUSTOMER REQUEST SECTION -->
+<!-- CUSTOMER REQUEST SECTION (WHATSAPP DIRECT) -->
 <section id="request" class="request-section" style="padding: 40px 20px; max-width: 600px; margin: 0 auto; background: #1a1a1a; border-radius: 8px; color: #fff;">
   <h2 style="color: #ff9900; text-align: center; margin-bottom: 10px;">CUSTOMER SERVICE REQUEST</h2>
-  <p style="text-align: center; color: #ccc; margin-bottom: 20px;">Submit your motor repair request and we will get back to you shortly.</p>
+  <p style="text-align: center; color: #ccc; margin-bottom: 20px;">Fill out the form below to contact us directly on WhatsApp.</p>
   
-  <form action="https://api.web3forms.com/submit" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
-    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_FROM_EMAIL">
-    
-    <!-- Your existing name, phone, and message fields stay here -->
-</form>
+  <form id="whatsappForm" onsubmit="sendToWhatsApp(event)" style="display: flex; flex-direction: column; gap: 15px;">
     <div>
       <label style="display: block; margin-bottom: 5px;">Your Name</label>
-      <input type="text" name="name" required style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff;">
+      <input type="text" id="custName" required placeholder="Enter your name" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff;">
     </div>
     
     <div>
       <label style="display: block; margin-bottom: 5px;">Phone Number / WhatsApp</label>
-      <input type="tel" name="phone" required style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff;">
+      <input type="tel" id="custPhone" required placeholder="Enter your mobile number" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff;">
     </div>
     
     <div>
       <label style="display: block; margin-bottom: 5px;">Motor Type & Issue Details</label>
-      <textarea name="message" rows="4" placeholder="e.g. 3 HP Crompton motor burnt coils, needs rewinding..." required style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff;"></textarea>
+      <textarea id="custDetails" rows="4" required placeholder="e.g. 5 HP motor winding rate..." style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff;"></textarea>
     </div>
     
-    <button type="submit" style="background: #ff9900; color: #000; font-weight: bold; padding: 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem;">
-      SUBMIT REQUEST
+    <button type="submit" style="background: #25D366; color: #fff; font-weight: bold; padding: 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      SEND VIA WHATSAPP
     </button>
   </form>
 </section>
+
+<script>
+function sendToWhatsApp(event) {
+  event.preventDefault(); // Prevents page reload
+  
+  // Get values from form input fields
+  const name = document.getElementById('custName').value;
+  const phone = document.getElementById('custPhone').value;
+  const details = document.getElementById('custDetails').value;
+  
+  // Workshop WhatsApp Number in international format (Country code + Mobile Number)
+  const workshopWhatsApp = "918590259451"; 
+  
+  // Format the text message
+  const message = *NEW SERVICE REQUEST - EXCEL ELECTRICALS*%0A%0A +
+                  *Name:* ${encodeURIComponent(name)}%0A +
+                  *Phone:* ${encodeURIComponent(phone)}%0A +
+                  *Details:* ${encodeURIComponent(details)};
+                  
+  // Construct the WhatsApp URL
+  const whatsappUrl = https://wa.me/${workshopWhatsApp}?text=${message};
+  
+  // Open WhatsApp in a new tab/app
+  window.open(whatsappUrl, '_blank');
+}
+</script>
 <!-- TERMS & CONDITIONS SECTION -->
 <section id="terms" class="terms-section" style="padding: 40px 20px; max-width: 1000px; margin: 0 auto; color: #bbb; font-size: 0.9rem; line-height: 1.6;">
   <h2 style="color: #ff9900; text-align: center; margin-bottom: 20px;">TERMS & CONDITIONS</h2>
