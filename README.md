@@ -641,19 +641,19 @@ function sendToWhatsApp(event) {
   const details = document.getElementById('custDetails').value;
   
   // Workshop WhatsApp Number in international format (Country code + Mobile Number)
-  const workshopWhatsApp = "918590259451"; 
-  
-  // Format the text message
-  const message = *NEW SERVICE REQUEST - EXCEL ELECTRICALS*%0A%0A +
-                  *Name:* ${encodeURIComponent(name)}%0A +
-                  *Phone:* ${encodeURIComponent(phone)}%0A +
-                  *Details:* ${encodeURIComponent(details)};
-                  
-  // Construct the WhatsApp URL
-  const whatsappUrl = https://wa.me/${workshopWhatsApp}?text=${message};
-  
-  // Open WhatsApp in a new tab/app
-  window.open(whatsappUrl, '_blank');
+  const workshopWhatsApp = "918590259451";
+
+    // Format the text message
+    const message = *NEW SERVICE REQUEST - EXCEL ELECTRICALS*%0A%0A +
+                    *Name:* ${encodeURIComponent(name)}%0A +
+                    *Phone:* ${encodeURIComponent(phone)}%0A +
+                    *Details:* ${encodeURIComponent(details)};
+
+    // Construct the WhatsApp URL
+    const whatsappUrl = https://wa.me/${workshopWhatsApp}?text=${message};
+
+    // Open WhatsApp in a new tab/app
+    window.open(whatsappUrl, '_blank');
 }
 </script>
 <!-- TERMS & CONDITIONS SECTION -->
