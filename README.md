@@ -645,18 +645,24 @@ function sendViaSMS() {
   const workshopNumber = "918590259451";
   const messageBody = EXCEL ELECTRICALS SERVICE REQUEST\nName: ${name}\nPhone: ${phone}\nDetails: ${details};
 
-  // Detect if the user is on a Mobile Device
+  // Check if user is on a mobile device (Android / iPhone)
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
   if (isMobile) {
-    // Open default SMS app on smartphones
+    // Smartphone: Open SMS messaging app directly
     window.location.href = sms:${workshopNumber}?body=${encodeURIComponent(messageBody)};
   } else {
-    // Fallback for Desktop Browsers (Opens web message / WhatsApp web fallback)
-    alert(SMS messaging is only supported on mobile devices.\n\nTo contact Excel Electricals from desktop, please call or WhatsApp: +${workshopNumber});
-    window.location.href = https://wa.me/${workshopNumber}?text=${encodeURIComponent(messageBody)};
+    // Desktop / Laptop: Show direct popup with details to call or text
+    alert(
+      SERVICE REQUEST SUMMARY\n\n +
+      Name: ${name}\n +
+      Phone: ${phone}\n +
+      Details: ${details}\n\n +
+      Please call or send an SMS to Excel Electricals directly at: +${workshopNumber}
+    );
   }
 }
+</script>
 <!-- TERMS & CONDITIONS SECTION -->
 <section id="terms" class="terms-section" style="padding: 40px 20px; max-width: 1000px; margin: 0 auto; color: #bbb; font-size: 0.9rem; line-height: 1.6;">
   <h2 style="color: #ff9900; text-align: center; margin-bottom: 20px;">TERMS & CONDITIONS</h2>
