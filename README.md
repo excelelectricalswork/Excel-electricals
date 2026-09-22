@@ -660,24 +660,6 @@ function sendToWhatsApp() {
   window.location.href = whatsappUrl;
 }
 </script>
-<!-- Direct SMS Button -->
-<button type="button" onclick="sendViaSMS()" style="background: #17a2b8; color: #fff; font-weight: bold; padding: 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; width: 100%;">
-  💬 SEND VIA SMS / MESSAGE
-</button>
-
-<script>
-function sendViaSMS() {
-  const name = document.getElementById('custName').value.trim();
-  const phone = document.getElementById('custPhone').value.trim();
-  const details = document.getElementById('custDetails').value.trim();
-
-  if (!name || !phone || !details) {
-    alert("Please fill in your Name, Phone, and Details first.");
-    return;
-  }
-
-  const workshopNumber = "918590259451";
-  const messageText = Excel Electricals Service Request:\nName: ${name}\nPhone: ${phone}\nDetails: ${…
 <!-- TERMS & CONDITIONS SECTION -->
 <section id="terms" class="terms-section" style="padding: 40px 20px; max-width: 1000px; margin: 0 auto; color: #bbb; font-size: 0.9rem; line-height: 1.6;">
   <h2 style="color: #ff9900; text-align: center; margin-bottom: 20px;">TERMS & CONDITIONS</h2>
