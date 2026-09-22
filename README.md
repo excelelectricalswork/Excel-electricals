@@ -638,36 +638,41 @@
 </section>
 <script>
 function sendViaSMS() {
-  // Read form input values
-  const nameInput = document.querySelector('input[placeholder="sijo"]') || document.getElementById('custName');
-  const phoneInput = document.querySelector('input[placeholder="7510144188"]') || document.getElementById('custPhone');
-  const detailsInput = document.querySelector('textarea') || document.getElementById('custDetails');
+  // Find input fields by ID, Name, or Tag
+  var nameEl = document.getElementById('custName') || document.querySelector('input[type="text"]') || document.querySelector('input[name="name"]');
+  var phoneEl = document.getElementById('custPhone') || document.querySelector('input[type="tel"]') || document.querySelector('input[name="phone"]');
+  var detailsEl = document.getElementById('custDetails') || document.querySelector('textarea') || document.querySelector('input[name="details"]');
 
-  const name = nameInput ? nameInput.value.trim() : '';
-  const phone = phoneInput ? phoneInput.value.trim() : '';
-  const details = detailsInput ? detailsInput.value.trim() : '';
+  var name = nameEl ? nameEl.value.trim() : '';
+  var phone = phoneEl ? phoneEl.value.trim() : '';
+  var details = detailsEl ? detailsEl.value.trim() : '';
 
-  if (!name || !phone || !details) {
-    alert("Please fill out Name, Phone Number, and Details first.");
+  // Fallback text if inputs are empty
+  if (!name && !phone && !details) {
+    alert("Please fill in your details first!");
     return;
   }
 
-  const workshopNumber = "918590259451";
-  const textMessage = EXCEL ELECTRICALS SERVICE REQUEST\nName: ${name}\nPhone: ${phone}\nDetails: ${details};
+  var workshopNumber = "918590259451";
+  var textMessage = "EXCEL ELECTRICALS SERVICE REQUEST\n" +
+                    "Name: " + name + "\n" +
+                    "Phone: " + phone + "\n" +
+                    "Details: " + details;
 
-  // Check if user is on Mobile Phone
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  var encodedMsg = encodeURIComponent(textMessage);
+
+  // Check if device is Mobile Phone
+  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
   if (isMobile) {
-    // Smartphone: Open native SMS app
-    window.location.href = sms:${workshopNumber}?body=${encodeURIComponent(textMessage)};
+    // Open native SMS app
+    window.location.href = "sms:" + workshopNumber + "?body=" + encodedMsg;
   } else {
-    // Desktop PC / Laptop: Open WhatsApp web automatically
-    window.open(https://wa.me/${workshopNumber}?text=${encodeURIComponent(textMessage)}, '_blank');
+    // Open WhatsApp Web on PC / Laptop
+    window.open("https://wa.me/" + workshopNumber + "?text=" + encodedMsg, "_blank");
   }
 }
 </script>
-
 <!-- TERMS & CONDITIONS SECTION -->
 <section id="terms" class="terms-section" style="padding: 40px 20px; max-width: 1000px; margin: 0 auto; color: #bbb; font-size: 0.9rem; line-height: 1.6;">
   <h2 style="color: #ff9900; text-align: center; margin-bottom: 20px;">TERMS & CONDITIONS</h2>
