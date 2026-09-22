@@ -609,7 +609,11 @@
   <h2 style="color: #ff9900; text-align: center; margin-bottom: 10px;">CUSTOMER SERVICE REQUEST</h2>
   <p style="text-align: center; color: #ccc; margin-bottom: 20px;">Submit your motor repair request and we will get back to you shortly.</p>
   
-  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+  <form action="https://api.web3forms.com/submit" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_FROM_EMAIL">
+    
+    <!-- Your existing name, phone, and message fields stay here -->
+</form>
     <div>
       <label style="display: block; margin-bottom: 5px;">Your Name</label>
       <input type="text" name="name" required style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff;">
