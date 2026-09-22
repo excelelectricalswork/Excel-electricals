@@ -653,7 +653,7 @@ function sendToWhatsApp(event) {
     const whatsappUrl = https://wa.me/${workshopWhatsApp}?text=${message};
 
     // Open WhatsApp in a new tab/app
-    window.open(whatsappUrl, '_blank');
+   window.location.href = whatsappUrl;
 }
 </script>
 <!-- TERMS & CONDITIONS SECTION -->
