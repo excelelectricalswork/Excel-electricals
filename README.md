@@ -444,7 +444,10 @@
             <a href="#motors">Motors</a>
             <a href="#winding">Winding</a>
             <a href="#services">Services</a>
+            <a href="#request">Service Request</a>
             <a href="#contact">Contact</a>
+             <a href="#about">About</a>
+               <a href="#terms">Terms</a>
         </nav>
     </header>
 
