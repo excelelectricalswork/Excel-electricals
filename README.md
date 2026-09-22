@@ -604,60 +604,56 @@
     Located in Choondy, Aluva, <strong>Excel Electricals</strong> is a trusted workshop specializing in high-quality electric motor winding, stator rewinding, rotor servicing, and electrical component repairs. With years of hands-on expertise, we deliver fast, reliable, and durable repair solutions for industrial, commercial, and residential motors.
   </p>
 </section>
-<!-- CUSTOMER REQUEST SECTION (WHATSAPP DIRECT) -->
-<section id="request" class="request-section" style="padding: 40px 20px; max-width: 600px; margin: 0 auto; background: #1a1a1a; border-radius: 8px; color: #fff;">
-  <h2 style="color: #ff9900; text-align: center; margin-bottom: 10px;">CUSTOMER SERVICE REQUEST</h2>
-  <p style="text-align: center; color: #ccc; margin-bottom: 20px;">Fill out the form below to contact us directly on WhatsApp.</p>
-  
-  <form id="whatsappForm" style="display: flex; flex-direction: column; gap: 15px;">
+<!-- SERVICE REQUEST SECTION (SMS MESSAGE ONLY) -->
+<section id="sms-request" style="padding: 30px 20px; max-width: 500px; margin: 0 auto; background: #1a1a1a; border-radius: 8px; color: #fff;">
+  <h2 style="color: #ff9900; text-align: center; margin-bottom: 10px;">SEND SERVICE REQUEST</h2>
+  <p style="text-align: center; color: #ccc; margin-bottom: 20px; font-size: 0.95rem;">Fill out the form below to send a direct text message to our workshop.</p>
+
+  <form id="smsForm" style="display: flex; flex-direction: column; gap: 15px;">
     <div>
-      <label style="display: block; margin-bottom: 5px;">Your Name</label>
-      <input type="text" id="custName" required placeholder="Enter your name" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff;">
+      <label style="display: block; margin-bottom: 5px; color: #ddd;">Your Name</label>
+      <input type="text" id="custName" required placeholder="Enter full name" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff; box-sizing: border-box;">
     </div>
-    
+
     <div>
-      <label style="display: block; margin-bottom: 5px;">Phone Number / WhatsApp</label>
-      <input type="tel" id="custPhone" required placeholder="Enter your mobile number" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff;">
+      <label style="display: block; margin-bottom: 5px; color: #ddd;">Phone Number</label>
+      <input type="tel" id="custPhone" required placeholder="Enter mobile number" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff; box-sizing: border-box;">
     </div>
-    
+
     <div>
-      <label style="display: block; margin-bottom: 5px;">Motor Type & Issue Details</label>
-      <textarea id="custDetails" rows="4" required placeholder="e.g. 5 HP motor winding rate..." style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff;"></textarea>
+      <label style="display: block; margin-bottom: 5px; color: #ddd;">Motor / Repair Details</label>
+      <textarea id="custDetails" rows="4" required placeholder="e.g. 3 HP motor winding details..." style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff; box-sizing: border-box;"></textarea>
     </div>
-    
-    <button type="button" onclick="sendToWhatsApp()" style="background: #25D366; color: #fff; font-weight: bold; padding: 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; width: 100%;">
-      SEND VIA WHATSAPP
+
+    <button type="button" onclick="sendViaSMS()" style="background: #17a2b8; color: #fff; font-weight: bold; padding: 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; width: 100%; margin-top: 5px;">
+      💬 SEND MESSAGE (SMS)
     </button>
   </form>
 </section>
 
 <script>
-function sendToWhatsApp() {
-  // Get input values
+function sendViaSMS() {
   const name = document.getElementById('custName').value.trim();
   const phone = document.getElementById('custPhone').value.trim();
   const details = document.getElementById('custDetails').value.trim();
-  
-  // Validation check
+
+  // Validate inputs
   if (!name || !phone || !details) {
-    alert("Please fill in all fields before submitting.");
+    alert("Please fill in your Name, Phone Number, and Details first.");
     return;
   }
-  
-  // Workshop WhatsApp Number
-  const workshopWhatsApp = "918590259451"; 
-  
-  // Create message string
-  const text = "NEW SERVICE REQUEST - EXCEL ELECTRICALS\n\n" +
-               "Name: " + name + "\n" +
-               "Phone: " + phone + "\n" +
-               "Details: " + details;
-               
-  // Encode URL
-  const whatsappUrl = "https://wa.me/" + workshopWhatsApp + "?text=" + encodeURIComponent(text);
-  
-  // Redirect directly to WhatsApp
-  window.location.href = whatsappUrl;
+
+  // Workshop Phone Number
+  const workshopNumber = "918590259451";
+
+  // Format the text message body
+  const messageBody = EXCEL ELECTRICALS SERVICE REQUEST\nName: ${name}\nPhone: ${phone}\nDetails: ${details};
+
+  // Direct SMS link (works on Android & iOS mobile devices)
+  const smsUrl = sms:${workshopNumber}?body=${encodeURIComponent(messageBody)};
+
+  // Redirect to Messages app
+  window.location.href = smsUrl;
 }
 </script>
 <!-- TERMS & CONDITIONS SECTION -->
