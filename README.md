@@ -637,25 +637,26 @@ function sendViaSMS() {
   const phone = document.getElementById('custPhone').value.trim();
   const details = document.getElementById('custDetails').value.trim();
 
-  // Validate inputs
   if (!name || !phone || !details) {
     alert("Please fill in your Name, Phone Number, and Details first.");
     return;
   }
 
-  // Workshop Phone Number
   const workshopNumber = "918590259451";
-
-  // Format the text message body
   const messageBody = EXCEL ELECTRICALS SERVICE REQUEST\nName: ${name}\nPhone: ${phone}\nDetails: ${details};
 
-  // Direct SMS link (works on Android & iOS mobile devices)
-  const smsUrl = sms:${workshopNumber}?body=${encodeURIComponent(messageBody)};
+  // Detect if the user is on a Mobile Device
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-  // Redirect to Messages app
-  window.location.href = smsUrl;
+  if (isMobile) {
+    // Open default SMS app on smartphones
+    window.location.href = sms:${workshopNumber}?body=${encodeURIComponent(messageBody)};
+  } else {
+    // Fallback for Desktop Browsers (Opens web message / WhatsApp web fallback)
+    alert(SMS messaging is only supported on mobile devices.\n\nTo contact Excel Electricals from desktop, please call or WhatsApp: +${workshopNumber});
+    window.location.href = https://wa.me/${workshopNumber}?text=${encodeURIComponent(messageBody)};
+  }
 }
-</script>
 <!-- TERMS & CONDITIONS SECTION -->
 <section id="terms" class="terms-section" style="padding: 40px 20px; max-width: 1000px; margin: 0 auto; color: #bbb; font-size: 0.9rem; line-height: 1.6;">
   <h2 style="color: #ff9900; text-align: center; margin-bottom: 20px;">TERMS & CONDITIONS</h2>
