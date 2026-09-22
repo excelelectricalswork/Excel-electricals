@@ -638,42 +638,23 @@
 </section>
 <script>
 function sendViaSMS() {
-  // Find input fields by ID, Name, or Tag
-  var nameEl = document.getElementById('custName') || document.querySelector('input[type="text"]') || document.querySelector('input[name="name"]');
-  var phoneEl = document.getElementById('custPhone') || document.querySelector('input[type="tel"]') || document.querySelector('input[name="phone"]');
-  var detailsEl = document.getElementById('custDetails') || document.querySelector('textarea') || document.querySelector('input[name="details"]');
-
-  var name = nameEl ? nameEl.value.trim() : '';
-  var phone = phoneEl ? phoneEl.value.trim() : '';
-  var details = detailsEl ? detailsEl.value.trim() : '';
-
-  // Fallback text if inputs are empty
-  if (!name && !phone && !details) {
-    alert("Please fill in your details first!");
-    return;
-  }
+  var name = document.getElementById('custName') ? document.getElementById('custName').value : '';
+  var phone = document.getElementById('custPhone') ? document.getElementById('custPhone').value : '';
+  var details = document.getElementById('custDetails') ? document.getElementById('custDetails').value : '';
 
   var workshopNumber = "918590259451";
-  var textMessage = "EXCEL ELECTRICALS SERVICE REQUEST\n" +
-                    "Name: " + name + "\n" +
-                    "Phone: " + phone + "\n" +
-                    "Details: " + details;
+  var textMessage = "EXCEL ELECTRICALS SERVICE REQUEST\nName: " + name + "\nPhone: " + phone + "\nDetails: " + details;
 
-  var encodedMsg = encodeURIComponent(textMessage);
-  <a href="sms:+918590259451?body=Hello%20Excel%20Electricals,%20I%20need%20service%20for%20my%20motor." 
-   style="display: inline-block; width: 100%; text-align: center; padding: 12px; background-color: #ff9900; color: #000; font-weight: bold; text-decoration: none; border-radius: 6px;">
-  💬 SEND SMS
-</a>
-
-  // Check if device is Mobile Phone
   var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
   if (isMobile) {
-    // Open native SMS app
-    window.location.href = "sms:" + workshopNumber + "?body=" + encodedMsg;
+    // Mobile: Native SMS app
+    window.location.href = "sms:" + workshopNumber + "?body=" + encodeURIComponent(textMessage);
   } else {
-    // Open WhatsApp Web on PC / Laptop
-    window.open("https://wa.me/" + workshopNumber + "?text=" + encodedMsg, "_blank");
+    // Desktop: Open default Email app (Outlook/Gmail)
+    var email = "excelelectricalswork@gmail.com";
+    var subject = "Service Request - " + name;
+    window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(textMessage);
   }
 }
 </script>
