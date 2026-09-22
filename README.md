@@ -594,6 +594,13 @@
     </iframe>
   </div>
 </section>
+<!-- ABOUT US SECTION -->
+<section id="about" class="about-section" style="padding: 40px 20px; max-width: 1000px; margin: 0 auto; color: #fff;">
+  <h2 style="color: #ff9900; text-align: center; margin-bottom: 20px;">ABOUT EXCEL ELECTRICALS</h2>
+  <p style="line-height: 1.6; text-align: center; font-size: 1.1rem;">
+    Located in Choondy, Aluva, <strong>Excel Electricals</strong> is a trusted workshop specializing in high-quality electric motor winding, stator rewinding, rotor servicing, and electrical component repairs. With years of hands-on expertise, we deliver fast, reliable, and durable repair solutions for industrial, commercial, and residential motors.
+  </p>
+</section>
 <!-- SINGLE CLEAN REVIEWS SECTION -->
 <section id="reviews" class="reviews-section">
   <div class="section-title">
