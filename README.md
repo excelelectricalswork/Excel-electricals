@@ -637,27 +637,46 @@
   </form>
 </section>
 <script>
-function sendViaSMS() {
-  var name = document.getElementById('custName') ? document.getElementById('custName').value : '';
-  var phone = document.getElementById('custPhone') ? document.getElementById('custPhone').value : '';
-  var details = document.getElementById('custDetails') ? document.getElementById('custDetails').value : '';
+function handleMessageClick(event) {
+  var nameEl = document.getElementById('custName') || document.querySelector('input[type="text"]');
+  var phoneEl = document.getElementById('custPhone') || document.querySelector('input[type="tel"]');
+  var detailsEl = document.getElementById('custDetails') || document.querySelector('textarea');
+
+  var name = nameEl ? nameEl.value.trim() : '';
+  var phone = phoneEl ? phoneEl.value.trim() : '';
+  var details = detailsEl ? detailsEl.value.trim() : '';
+
+  if (!name || !phone || !details) {
+    alert("Please fill in your Name, Phone Number, and Details first.");
+    event.preventDefault(); // Stops action if fields are empty
+    return false;
+  }
+
+  var textMessage = "EXCEL ELECTRICALS SERVICE REQUEST\n\n" +
+                    "Name: " + name + "\n" +
+                    "Phone: " + phone + "\n" +
+                    "Details: " + details;
 
   var workshopNumber = "918590259451";
-  var textMessage = "EXCEL ELECTRICALS SERVICE REQUEST\nName: " + name + "\nPhone: " + phone + "\nDetails: " + details;
-
+  var encodedMsg = encodeURIComponent(textMessage);
+  
   var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  var btn = event.currentTarget;
 
   if (isMobile) {
-    // Mobile: Native SMS app
-    window.location.href = "sms:" + workshopNumber + "?body=" + encodeURIComponent(textMessage);
+    // Directly triggers the phone's native Messaging app
+    btn.href = "sms:" + workshopNumber + "?body=" + encodedMsg;
   } else {
-    // Desktop: Open default Email app (Outlook/Gmail)
-    var email = "excelelectricalswork@gmail.com";
-    var subject = "Service Request - " + name;
-    window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(textMessage);
+    // Directly triggers default Email client without navigating away or opening a blank tab
+    btn.href = "mailto:excelelectricalswork@gmail.com?subject=" + encodeURIComponent("Service Request - " + name) + "&body=" + encodedMsg;
   }
 }
 </script>
+
+<!-- USE AN <a> LINK BUTTON DIRECTLY -->
+<a id="msgBtn" href="#" onclick="handleMessageClick(event)" style="display: block; width: 100%; text-align: center; padding: 12px; background-color: #ff9900; color: #000; font-weight: bold; text-decoration: none; border-radius: 6px; box-sizing: border-box;">
+  SEND MESSAGE
+</a>
 <!-- TERMS & CONDITIONS SECTION -->
 <section id="terms" class="terms-section" style="padding: 40px 20px; max-width: 1000px; margin: 0 auto; color: #bbb; font-size: 0.9rem; line-height: 1.6;">
   <h2 style="color: #ff9900; text-align: center; margin-bottom: 20px;">TERMS & CONDITIONS</h2>
