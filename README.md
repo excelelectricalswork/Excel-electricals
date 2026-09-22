@@ -610,73 +610,87 @@
     Located in Choondy, Aluva, <strong>Excel Electricals</strong> is a trusted workshop specializing in high-quality electric motor winding, stator rewinding, rotor servicing, and electrical component repairs. With years of hands-on expertise, we deliver fast, reliable, and durable repair solutions for industrial, commercial, and residential motors.
   </p>
 </section>
-<!-- SERVICE REQUEST SECTION (SMS MESSAGE ONLY) -->
-<section id="sms-request" style="padding: 30px 20px; max-width: 500px; margin: 0 auto; background: #1a1a1a; border-radius: 8px; color: #fff;">
-  <h2 style="color: #ff9900; text-align: center; margin-bottom: 10px;">SEND SERVICE REQUEST</h2>
-  <p style="text-align: center; color: #ccc; margin-bottom: 20px; font-size: 0.95rem;">Fill out the form below to send a direct text message to our workshop.</p>
+<!-- DIRECT SERVICE REQUEST FORM (EXCEL ELECTRICALS) -->
+<div style="background: #1a1a1a; padding: 25px; border-radius: 8px; max-width: 500px; margin: 0 auto; color: #fff;">
+  <h3 style="color: #ff9900; text-align: center; margin-bottom: 15px;">SERVICE REQUEST</h3>
+  
+  <form id="directMsgForm" style="display: flex; flex-direction: column; gap: 12px;">
+    <!-- Web3Forms Access Key (Paste your key inside value below) -->
+    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+    <input type="hidden" name="subject" value="New Motor Service Request - Excel Electricals">
 
-  <form id="smsForm" style="display: flex; flex-direction: column; gap: 15px;">
     <div>
-      <label style="display: block; margin-bottom: 5px; color: #ddd;">Your Name</label>
-      <input type="text" id="custName" required placeholder="Enter full name" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff; box-sizing: border-box;">
+      <label style="display: block; margin-bottom: 5px;">Your Name</label>
+      <input type="text" name="name" required placeholder="Enter full name" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff; box-sizing: border-box;">
     </div>
 
     <div>
-      <label style="display: block; margin-bottom: 5px; color: #ddd;">Phone Number</label>
-      <input type="tel" id="custPhone" required placeholder="Enter mobile number" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff; box-sizing: border-box;">
+      <label style="display: block; margin-bottom: 5px;">Phone Number</label>
+      <input type="tel" name="phone" required placeholder="Enter mobile number" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff; box-sizing: border-box;">
     </div>
 
     <div>
-      <label style="display: block; margin-bottom: 5px; color: #ddd;">Motor / Repair Details</label>
-      <textarea id="custDetails" rows="4" required placeholder="e.g. 3 HP motor winding details..." style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff; box-sizing: border-box;"></textarea>
+      <label style="display: block; margin-bottom: 5px;">Motor / Repair Details</label>
+      <textarea name="message" rows="3" required placeholder="Enter repair details..." style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff; box-sizing: border-box;"></textarea>
     </div>
 
-    <button type="button" onclick="sendViaSMS()" style="background: #17a2b8; color: #fff; font-weight: bold; padding: 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; width: 100%; margin-top: 5px;">
-      💬 SEND MESSAGE (SMS)
+    <!-- SINGLE DIRECT RESPONSE BUTTON -->
+    <button type="submit" id="submitBtn" style="width: 100%; padding: 12px; background: #ff9900; color: #000; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; margin-top: 5px;">
+      SEND MESSAGE
     </button>
   </form>
-</section>
+
+  <!-- Success/Failure Notification Text -->
+  <div id="formStatus" style="text-align: center; margin-top: 12px; font-weight: bold; display: none;"></div>
+</div>
+
 <script>
-function handleMessageClick(event) {
-  var nameEl = document.getElementById('custName') || document.querySelector('input[type="text"]');
-  var phoneEl = document.getElementById('custPhone') || document.querySelector('input[type="tel"]');
-  var detailsEl = document.getElementById('custDetails') || document.querySelector('textarea');
+const form = document.getElementById('directMsgForm');
+const statusDiv = document.getElementById('formStatus');
+const submitBtn = document.getElementById('submitBtn');
 
-  var name = nameEl ? nameEl.value.trim() : '';
-  var phone = phoneEl ? phoneEl.value.trim() : '';
-  var details = detailsEl ? detailsEl.value.trim() : '';
-
-  if (!name || !phone || !details) {
-    alert("Please fill in your Name, Phone Number, and Details first.");
-    event.preventDefault(); // Stops action if fields are empty
-    return false;
-  }
-
-  var textMessage = "EXCEL ELECTRICALS SERVICE REQUEST\n\n" +
-                    "Name: " + name + "\n" +
-                    "Phone: " + phone + "\n" +
-                    "Details: " + details;
-
-  var workshopNumber = "918590259451";
-  var encodedMsg = encodeURIComponent(textMessage);
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
   
-  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  var btn = event.currentTarget;
+  submitBtn.innerText = "Sending...";
+  submitBtn.disabled = true;
 
-  if (isMobile) {
-    // Directly triggers the phone's native Messaging app
-    btn.href = "sms:" + workshopNumber + "?body=" + encodedMsg;
-  } else {
-    // Directly triggers default Email client without navigating away or opening a blank tab
-    btn.href = "mailto:excelelectricalswork@gmail.com?subject=" + encodeURIComponent("Service Request - " + name) + "&body=" + encodedMsg;
-  }
-}
+  const formData = new FormData(form);
+  const object = Object.fromEntries(formData);
+  const json = JSON.stringify(object);
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: json
+  })
+  .then(async (response) => {
+    let result = await response.json();
+    if (response.status == 200) {
+      statusDiv.style.display = "block";
+      statusDiv.style.color = "#28a745";
+      statusDiv.innerText = "✅ Message sent successfully! We will contact you at 8590259451 shortly.";
+      form.reset();
+    } else {
+      statusDiv.style.display = "block";
+      statusDiv.style.color = "#dc3545";
+      statusDiv.innerText = "❌ " + result.message;
+    }
+  })
+  .catch(error => {
+    statusDiv.style.display = "block";
+    statusDiv.style.color = "#dc3545";
+    statusDiv.innerText = "❌ Something went wrong. Please try again.";
+  })
+  .then(function() {
+    submitBtn.innerText = "SEND MESSAGE";
+    submitBtn.disabled = false;
+  });
+});
 </script>
-
-<!-- USE AN <a> LINK BUTTON DIRECTLY -->
-<a id="msgBtn" href="#" onclick="handleMessageClick(event)" style="display: block; width: 100%; text-align: center; padding: 12px; background-color: #ff9900; color: #000; font-weight: bold; text-decoration: none; border-radius: 6px; box-sizing: border-box;">
-  SEND MESSAGE
-</a>
 <!-- TERMS & CONDITIONS SECTION -->
 <section id="terms" class="terms-section" style="padding: 40px 20px; max-width: 1000px; margin: 0 auto; color: #bbb; font-size: 0.9rem; line-height: 1.6;">
   <h2 style="color: #ff9900; text-align: center; margin-bottom: 20px;">TERMS & CONDITIONS</h2>
