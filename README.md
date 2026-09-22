@@ -660,6 +660,10 @@ function sendViaSMS() {
                     "Details: " + details;
 
   var encodedMsg = encodeURIComponent(textMessage);
+  <a href="sms:+918590259451?body=Hello%20Excel%20Electricals,%20I%20need%20service%20for%20my%20motor." 
+   style="display: inline-block; width: 100%; text-align: center; padding: 12px; background-color: #ff9900; color: #000; font-weight: bold; text-decoration: none; border-radius: 6px;">
+  💬 SEND SMS
+</a>
 
   // Check if device is Mobile Phone
   var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
