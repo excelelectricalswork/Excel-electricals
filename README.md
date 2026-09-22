@@ -609,7 +609,7 @@
   <h2 style="color: #ff9900; text-align: center; margin-bottom: 10px;">CUSTOMER SERVICE REQUEST</h2>
   <p style="text-align: center; color: #ccc; margin-bottom: 20px;">Fill out the form below to contact us directly on WhatsApp.</p>
   
-  <form id="whatsappForm" onsubmit="sendToWhatsApp(event)" style="display: flex; flex-direction: column; gap: 15px;">
+  <form id="whatsappForm" style="display: flex; flex-direction: column; gap: 15px;">
     <div>
       <label style="display: block; margin-bottom: 5px;">Your Name</label>
       <input type="text" id="custName" required placeholder="Enter your name" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff;">
@@ -625,35 +625,39 @@
       <textarea id="custDetails" rows="4" required placeholder="e.g. 5 HP motor winding rate..." style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff;"></textarea>
     </div>
     
-    <button type="submit" style="background: #25D366; color: #fff; font-weight: bold; padding: 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <button type="button" onclick="sendToWhatsApp()" style="background: #25D366; color: #fff; font-weight: bold; padding: 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; width: 100%;">
       SEND VIA WHATSAPP
     </button>
   </form>
 </section>
 
 <script>
-function sendToWhatsApp(event) {
-  event.preventDefault(); // Prevents page reload
+function sendToWhatsApp() {
+  // Get input values
+  const name = document.getElementById('custName').value.trim();
+  const phone = document.getElementById('custPhone').value.trim();
+  const details = document.getElementById('custDetails').value.trim();
   
-  // Get values from form input fields
-  const name = document.getElementById('custName').value;
-  const phone = document.getElementById('custPhone').value;
-  const details = document.getElementById('custDetails').value;
+  // Validation check
+  if (!name || !phone || !details) {
+    alert("Please fill in all fields before submitting.");
+    return;
+  }
   
-  // Workshop WhatsApp Number in international format (Country code + Mobile Number)
-  const workshopWhatsApp = "918590259451";
-
-    // Format the text message
-    const message = *NEW SERVICE REQUEST - EXCEL ELECTRICALS*%0A%0A +
-                    *Name:* ${encodeURIComponent(name)}%0A +
-                    *Phone:* ${encodeURIComponent(phone)}%0A +
-                    *Details:* ${encodeURIComponent(details)};
-
-    // Construct the WhatsApp URL
-    const whatsappUrl = https://wa.me/${workshopWhatsApp}?text=${message};
-
-    // Open WhatsApp in a new tab/app
-   window.location.href = whatsappUrl;
+  // Workshop WhatsApp Number
+  const workshopWhatsApp = "918590259451"; 
+  
+  // Create message string
+  const text = "NEW SERVICE REQUEST - EXCEL ELECTRICALS\n\n" +
+               "Name: " + name + "\n" +
+               "Phone: " + phone + "\n" +
+               "Details: " + details;
+               
+  // Encode URL
+  const whatsappUrl = "https://wa.me/" + workshopWhatsApp + "?text=" + encodeURIComponent(text);
+  
+  // Redirect directly to WhatsApp
+  window.location.href = whatsappUrl;
 }
 </script>
 <!-- TERMS & CONDITIONS SECTION -->
