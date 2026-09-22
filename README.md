@@ -691,6 +691,74 @@ form.addEventListener('submit', function(e) {
   });
 });
 </script>
+<!-- MESSAGES & CUSTOMER REVIEWS SECTION -->
+<section id="messages" style="padding: 40px 20px; max-width: 800px; margin: 0 auto; color: #fff;">
+  <h2 style="color: #ff9900; text-align: center; margin-bottom: 10px;">CUSTOMER MESSAGES & REVIEWS</h2>
+  <p style="text-align: center; color: #ccc; margin-bottom: 30px;">See what our customers say or leave your own message for Excel Electricals.</p>
+
+  <!-- FORM TO SUBMIT A NEW MESSAGE -->
+  <div style="background: #1a1a1a; padding: 20px; border-radius: 8px; margin-bottom: 30px; border: 1px solid #333;">
+    <h3 style="color: #ff9900; margin-bottom: 15px; font-size: 1.2rem;">Leave a Message or Review</h3>
+    
+    <form id="msgForm" onsubmit="addMessage(event)" style="display: flex; flex-direction: column; gap: 12px;">
+      <div>
+        <label style="display: block; margin-bottom: 5px; font-size: 0.9rem;">Your Name</label>
+        <input type="text" id="reviewerName" required placeholder="Enter your name" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff; box-sizing: border-box;">
+      </div>
+
+      <div>
+        <label style="display: block; margin-bottom: 5px; font-size: 0.9rem;">Rating</label>
+        <select id="reviewerRating" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #ff9900; box-sizing: border-box;">
+          <option value="★★★★★">★★★★★ (5/5 Excellent)</option>
+          <option value="★★★★☆">★★★★☆ (4/5 Very Good)</option>
+          <option value="★★★☆☆">★★★☆☆ (3/5 Good)</option>
+        </select>
+      </div>
+
+      <div>
+        <label style="display: block; margin-bottom: 5px; font-size: 0.9rem;">Message / Review</label>
+        <textarea id="reviewerText" rows="3" required placeholder="Write your experience with our motor winding & repair service..." style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff; box-sizing: border-box;"></textarea>
+      </div>
+
+      <button type="submit" style="padding: 12px; background: #ff9900; color: #000; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; width: 100%;">
+        POST MESSAGE
+      </button>
+    </form>
+  </div>
+
+  <!-- DISPLAY MESSAGES LIST -->
+  <div id="messageList" style="display: flex; flex-direction: column; gap: 15px;">
+    <!-- Default Sample Message 1 -->
+    <div style="background: #222; padding: 15px; border-radius: 6px; border-left: 4px solid #ff9900;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <strong style="color: #fff; font-size: 1.05rem;">Sijo Xavier</strong>
+        <span style="color: #ff9900;">★★★★★</span>
+      </div>
+      <p style="color: #ddd; margin: 0; line-height: 1.4; font-size: 0.95rem;">Prompt motor rewinding service in Choondy. High quality coil winding work!</p>
+    </div>
+
+    <!-- Default Sample Message 2 -->
+    <div style="background: #222; padding: 15px; border-radius: 6px; border-left: 4px solid #ff9900;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <strong style="color: #fff; font-size: 1.05rem;">Anil Kumar</strong>
+        <span style="color: #ff9900;">★★★★★</span>
+      </div>
+      <p style="color: #ddd; margin: 0; line-height: 1.4; font-size: 0.95rem;">Best repair shop in Aluva for 3 HP and 5 HP pumps. Very reliable.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+function addMessage(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('reviewerName').value.trim();
+  const rating = document.getElementById('reviewerRating').value;
+  const text = document.getElementById('reviewerText').value.trim();
+
+  if (!name || !text) return;
+
+  // Create new message car…
 <!-- TERMS & CONDITIONS SECTION -->
 <section id="terms" class="terms-section" style="padding: 40px 20px; max-width: 1000px; margin: 0 auto; color: #bbb; font-size: 0.9rem; line-height: 1.6;">
   <h2 style="color: #ff9900; text-align: center; margin-bottom: 20px;">TERMS & CONDITIONS</h2>
