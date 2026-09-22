@@ -232,6 +232,12 @@
         .button-secondary:hover {
             background-color: #30363d;
         }
+        <button 
+  type="button" 
+  onclick="sendViaSMS()" 
+  style="width: 100%; padding: 12px; background-color: #ff9900; color: #000000; font-weight: bold; font-size: 16px; border: none; border-radius: 6px; cursor: pointer;">
+  💬 SEND MESSAGE
+</button>
 
         /* FIXED HERO IMAGE FOR DESKTOP & MOBILE */
 .hero-image {
@@ -630,39 +636,38 @@
     </button>
   </form>
 </section>
-
 <script>
 function sendViaSMS() {
-  const name = document.getElementById('custName').value.trim();
-  const phone = document.getElementById('custPhone').value.trim();
-  const details = document.getElementById('custDetails').value.trim();
+  // Read form input values
+  const nameInput = document.querySelector('input[placeholder="sijo"]') || document.getElementById('custName');
+  const phoneInput = document.querySelector('input[placeholder="7510144188"]') || document.getElementById('custPhone');
+  const detailsInput = document.querySelector('textarea') || document.getElementById('custDetails');
+
+  const name = nameInput ? nameInput.value.trim() : '';
+  const phone = phoneInput ? phoneInput.value.trim() : '';
+  const details = detailsInput ? detailsInput.value.trim() : '';
 
   if (!name || !phone || !details) {
-    alert("Please fill in your Name, Phone Number, and Details first.");
+    alert("Please fill out Name, Phone Number, and Details first.");
     return;
   }
 
   const workshopNumber = "918590259451";
-  const messageBody = EXCEL ELECTRICALS SERVICE REQUEST\nName: ${name}\nPhone: ${phone}\nDetails: ${details};
+  const textMessage = EXCEL ELECTRICALS SERVICE REQUEST\nName: ${name}\nPhone: ${phone}\nDetails: ${details};
 
-  // Check if user is on a mobile device (Android / iPhone)
+  // Check if user is on Mobile Phone
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
   if (isMobile) {
-    // Smartphone: Open SMS messaging app directly
-    window.location.href = sms:${workshopNumber}?body=${encodeURIComponent(messageBody)};
+    // Smartphone: Open native SMS app
+    window.location.href = sms:${workshopNumber}?body=${encodeURIComponent(textMessage)};
   } else {
-    // Desktop / Laptop: Show direct popup with details to call or text
-    alert(
-      SERVICE REQUEST SUMMARY\n\n +
-      Name: ${name}\n +
-      Phone: ${phone}\n +
-      Details: ${details}\n\n +
-      Please call or send an SMS to Excel Electricals directly at: +${workshopNumber}
-    );
+    // Desktop PC / Laptop: Open WhatsApp web automatically
+    window.open(https://wa.me/${workshopNumber}?text=${encodeURIComponent(textMessage)}, '_blank');
   }
 }
 </script>
+
 <!-- TERMS & CONDITIONS SECTION -->
 <section id="terms" class="terms-section" style="padding: 40px 20px; max-width: 1000px; margin: 0 auto; color: #bbb; font-size: 0.9rem; line-height: 1.6;">
   <h2 style="color: #ff9900; text-align: center; margin-bottom: 20px;">TERMS & CONDITIONS</h2>
