@@ -601,6 +601,41 @@
     Located in Choondy, Aluva, <strong>Excel Electricals</strong> is a trusted workshop specializing in high-quality electric motor winding, stator rewinding, rotor servicing, and electrical component repairs. With years of hands-on expertise, we deliver fast, reliable, and durable repair solutions for industrial, commercial, and residential motors.
   </p>
 </section>
+<!-- CUSTOMER REQUEST SECTION -->
+<section id="request" class="request-section" style="padding: 40px 20px; max-width: 600px; margin: 0 auto; background: #1a1a1a; border-radius: 8px; color: #fff;">
+  <h2 style="color: #ff9900; text-align: center; margin-bottom: 10px;">CUSTOMER SERVICE REQUEST</h2>
+  <p style="text-align: center; color: #ccc; margin-bottom: 20px;">Submit your motor repair request and we will get back to you shortly.</p>
+  
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+    <div>
+      <label style="display: block; margin-bottom: 5px;">Your Name</label>
+      <input type="text" name="name" required style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff;">
+    </div>
+    
+    <div>
+      <label style="display: block; margin-bottom: 5px;">Phone Number / WhatsApp</label>
+      <input type="tel" name="phone" required style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff;">
+    </div>
+    
+    <div>
+      <label style="display: block; margin-bottom: 5px;">Motor Type & Issue Details</label>
+      <textarea name="message" rows="4" placeholder="e.g. 3 HP Crompton motor burnt coils, needs rewinding..." required style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff;"></textarea>
+    </div>
+    
+    <button type="submit" style="background: #ff9900; color: #000; font-weight: bold; padding: 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem;">
+      SUBMIT REQUEST
+    </button>
+  </form>
+</section>
+<!-- TERMS & CONDITIONS SECTION -->
+<section id="terms" class="terms-section" style="padding: 40px 20px; max-width: 1000px; margin: 0 auto; color: #bbb; font-size: 0.9rem; line-height: 1.6;">
+  <h2 style="color: #ff9900; text-align: center; margin-bottom: 20px;">TERMS & CONDITIONS</h2>
+  <ul style="list-style-type: disc; padding-left: 20px;">
+    <li><strong>Inspection & Estimates:</strong> Initial motor diagnosis is provided upon receipt at our workshop in Choondy, Aluva. Final service charges may vary depending on wire gauge, copper weights, and parts replaced.</li>
+    <li><strong>Warranty:</strong> Rewinding work carries a limited service warranty covering manufacturing defect in copper/insulation work. Damage from phase loss, voltage fluctuations, dry running, or water entry is excluded.</li>
+    <li><strong>Delivery & Collection:</strong> Repaired equipment must be picked up within 30 days of completion notification unless prior arrangements are made.</li>
+  </ul>
+</section>
 <!-- SINGLE CLEAN REVIEWS SECTION -->
 <section id="reviews" class="reviews-section">
   <div class="section-title">
