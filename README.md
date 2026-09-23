@@ -232,12 +232,6 @@
         .button-secondary:hover {
             background-color: #30363d;
         }
-        <button 
-  type="button" 
-  onclick="sendViaSMS()" 
-  style="width: 100%; padding: 12px; background-color: #ff9900; color: #000000; font-weight: bold; font-size: 16px; border: none; border-radius: 6px; cursor: pointer;">
-  💬 SEND MESSAGE
-</button>
 
         /* FIXED HERO IMAGE FOR DESKTOP & MOBILE */
 .hero-image {
