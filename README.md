@@ -65,6 +65,9 @@
     <title>Excel Electricals | Motor Winding & Repair Workshop</title>
 
     <style>
+    header {
+  display: none !important;
+}
         /* RESET & BASE STYLES */
         * {
             margin: 0;
