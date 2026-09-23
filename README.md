@@ -611,31 +611,31 @@
   </p>
 </section>
 <!-- DIRECT SERVICE REQUEST FORM (EXCEL ELECTRICALS) -->
-<div style="background: #1a1a1a; padding: 25px; border-radius: 8px; max-width: 500px; margin: 0 auto; color: #fff;">
+<div style="background: #1a1a1a; padding: 25px; border-radius: 8px; max-width: 500px; margin: auto;">
   <h3 style="color: #ff9900; text-align: center; margin-bottom: 15px;">SERVICE REQUEST</h3>
-  
-  <form id="directMsgForm" style="display: flex; flex-direction: column; gap: 12px;">
-    <!-- Web3Forms Access Key (Paste your key inside value below) -->
+
+  <form id="directMsgForm" style="display: flex; flex-direction: column; gap: 15px;">
+    <!-- Web3Forms Access Key (Get your key bound to excelelectricalswork@gmail.com at web3forms.com) -->
     <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-    <input type="hidden" name="subject" value="New Motor Service Request - Excel Electricals">
+    <input type="hidden" name="subject" value="New Service Request - Excel Electricals (+91 8590259451)">
 
     <div>
-      <label style="display: block; margin-bottom: 5px;">Your Name</label>
-      <input type="text" name="name" required placeholder="Enter full name" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff; box-sizing: border-box;">
+      <label style="display: block; margin-bottom: 5px; color: #fff;">Your Name</label>
+      <input type="text" name="name" required placeholder="Enter full name" style="width: 100%; padding: 10px; background: #222; color: #fff; border: 1px solid #444; border-radius: 4px; box-sizing: border-box;">
     </div>
 
     <div>
-      <label style="display: block; margin-bottom: 5px;">Phone Number</label>
-      <input type="tel" name="phone" required placeholder="Enter mobile number" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff; box-sizing: border-box;">
+      <label style="display: block; margin-bottom: 5px; color: #fff;">Phone Number</label>
+      <input type="tel" name="phone" required placeholder="Enter mobile number" style="width: 100%; padding: 10px; background: #222; color: #fff; border: 1px solid #444; border-radius: 4px; box-sizing: border-box;">
     </div>
 
     <div>
-      <label style="display: block; margin-bottom: 5px;">Motor / Repair Details</label>
-      <textarea name="message" rows="3" required placeholder="Enter repair details..." style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #444; background: #222; color: #fff; box-sizing: border-box;"></textarea>
+      <label style="display: block; margin-bottom: 5px; color: #fff;">Motor / Repair Details</label>
+      <textarea name="message" rows="3" required placeholder="Enter repair details..." style="width: 100%; padding: 10px; background: #222; color: #fff; border: 1px solid #444; border-radius: 4px; box-sizing: border-box;"></textarea>
     </div>
 
     <!-- SINGLE DIRECT RESPONSE BUTTON -->
-    <button type="submit" id="submitBtn" style="width: 100%; padding: 12px; background: #ff9900; color: #000; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; margin-top: 5px;">
+    <button type="submit" id="submitBtn" style="width: 100%; padding: 12px; background: #ffcc00; color: #000; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; margin-top: 5px;">
       SEND MESSAGE
     </button>
   </form>
@@ -645,52 +645,52 @@
 </div>
 
 <script>
-const form = document.getElementById('directMsgForm');
-const statusDiv = document.getElementById('formStatus');
-const submitBtn = document.getElementById('submitBtn');
+  const form = document.getElementById('directMsgForm');
+  const statusDiv = document.getElementById('formStatus');
+  const submitBtn = document.getElementById('submitBtn');
 
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  submitBtn.innerText = "Sending...";
-  submitBtn.disabled = true;
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
 
-  const formData = new FormData(form);
-  const object = Object.fromEntries(formData);
-  const json = JSON.stringify(object);
-  <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+    // Show sending status
+    submitBtn.innerText = "Sending...";
+    submitBtn.disabled = true;
 
-  fetch('https://api.web3forms.com/submit', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    body: json
-  })
-  .then(async (response) => {
-    let result = await response.json();
-    if (response.status == 200) {
-      statusDiv.style.display = "block";
-      statusDiv.style.color = "#28a745";
-      statusDiv.innerText = "✅ Message sent successfully! We will contact you at +918590259451 shortly.";
-      form.reset();
-    } else {
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+      });
+
+      const result = await response.json();
+
+      if (response.status === 200 && result.success) {
+        statusDiv.style.display = "block";
+        statusDiv.style.color = "#28a745";
+        statusDiv.innerText = "✔️ Message sent successfully! We will contact you at +91 8590259451 shortly.";
+        form.reset();
+      } else {
+        statusDiv.style.display = "block";
+        statusDiv.style.color = "#dc3545";
+        statusDiv.innerText = "❌ " + (result.message || "Something went wrong.");
+      }
+    } catch (error) {
       statusDiv.style.display = "block";
       statusDiv.style.color = "#dc3545";
-      statusDiv.innerText = "❌ " + result.message;
+      statusDiv.innerText = "❌ Something went wrong. Please try again.";
+    } finally {
+      submitBtn.innerText = "SEND MESSAGE";
+      submitBtn.disabled = false;
     }
-  })
-  .catch(error => {
-    statusDiv.style.display = "block";
-    statusDiv.style.color = "#dc3545";
-    statusDiv.innerText = "❌ Something went wrong. Please try again.";
-  })
-  .then(function() {
-    submitBtn.innerText = "SEND MESSAGE";
-    submitBtn.disabled = false;
   });
-});
 </script>
 <!-- TERMS & CONDITIONS SECTION -->
 <section id="terms" class="terms-section" style="padding: 40px 20px; max-width: 1000px; margin: 0 auto; color: #bbb; font-size: 0.9rem; line-height: 1.6;">
