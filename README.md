@@ -150,9 +150,6 @@ section,
 [id] {
   scroll-margin-top: 100px; /* Adjust height according to navbar height */
 }
-section {
-  padding-top: 100px; /* Pushes inner content down below the header */
-}
         body {
             font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
             background-color: #080a0d;
