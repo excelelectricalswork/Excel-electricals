@@ -616,7 +616,7 @@
 
   <form id="directMsgForm" style="display: flex; flex-direction: column; gap: 15px;">
     <!-- Web3Forms Access Key (Get your key bound to excelelectricalswork@gmail.com at web3forms.com) -->
-    <input type="hidden" name="access_key" value="excelelectricalswork@gmail.com">
+    <input type="hidden" name="access_key" value="PASTE_YOUR_REAL_KEY_HERE">
     <input type="hidden" name="subject" value="New Service Request - Excel Electricals (+91 8590259451)">
 
     <div>
