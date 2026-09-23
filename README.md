@@ -140,9 +140,12 @@ nav a {
   text-decoration: none;
   white-space: nowrap; /* Keeps link text on one line */
 }
-/* Add padding to the top of each section */
-section {
-  padding-top: 40px; /* Creates space between navbar and heading */
+.section-header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically centers the heading */
+  align-items: center;
+  padding-top: 20px;
 }
 
         body {
