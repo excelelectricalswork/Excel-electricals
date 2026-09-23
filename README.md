@@ -120,6 +120,26 @@
   max-width: 1000px;
   margin: 0 auto;
 }
+/* Ensure header elements line up properly */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+
+/* Format navigation links */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Adds clean spacing between links */
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  white-space: nowrap; /* Keeps link text on one line */
+}
 
 
         body {
