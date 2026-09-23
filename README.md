@@ -1,6 +1,4 @@
----
-layout: null
----
+
 <http>
   <html lang="en">
 <head>
