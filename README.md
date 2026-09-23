@@ -1,5 +1,8 @@
 <http>
   <html lang="en">
+    ---
+layout: null
+---
 <head>
   <meta name="robots" content="noindex, nofollow">
   <!-- Google tag (gtag.js) -->
