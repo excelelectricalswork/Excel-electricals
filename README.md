@@ -140,14 +140,16 @@ nav a {
   text-decoration: none;
   white-space: nowrap; /* Keeps link text on one line */
 }
-.section-header-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Vertically centers the heading */
-  align-items: center;
-  padding-top: 20px;
+/* Target section headings specifically */
+section h2, .section-title {
+  margin-top: 30px; /* Increase this value to push it further down */
+  padding-top: 10px;
 }
-
+/* Apply to all sections or target headings directly */
+section, 
+[id] {
+  scroll-margin-top: 100px; /* Adjust height according to navbar height */
+}
         body {
             font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
             background-color: #080a0d;
