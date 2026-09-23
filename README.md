@@ -615,8 +615,8 @@
   <h3 style="color: #ff9900; text-align: center; margin-bottom: 15px;">SERVICE REQUEST</h3>
 
   <form id="directMsgForm" style="display: flex; flex-direction: column; gap: 15px;">
-    <!-- Paste your 36-character Web3Forms key inside value="..." below -->
-    <input type="hidden" name="access_key" value="YOUR_ACTUAL_ACCESS_KEY_HERE">
+    <!-- Your Web3Forms Access Key -->
+    <input type="hidden" name="access_key" value="823e3a3d-8f8f-474a-ba21-2c91b05bee2a">
     <input type="hidden" name="subject" value="New Service Request - Excel Electricals">
 
     <div>
@@ -634,12 +634,13 @@
       <textarea name="message" rows="3" required placeholder="Enter repair details..." style="width: 100%; padding: 10px; background: #222; color: #fff; border: 1px solid #444; border-radius: 4px; box-sizing: border-box;"></textarea>
     </div>
 
+    <!-- SINGLE DIRECT RESPONSE BUTTON -->
     <button type="submit" id="submitBtn" style="width: 100%; padding: 12px; background: #ffcc00; color: #000; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; margin-top: 5px;">
       SEND MESSAGE
     </button>
   </form>
 
-  <!-- Status Notification Text -->
+  <!-- Success/Failure Notification Text -->
   <div id="formStatus" style="text-align: center; margin-top: 12px; font-weight: bold; display: none;"></div>
 </div>
 
@@ -651,6 +652,7 @@
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
 
+    // Show sending status
     submitBtn.innerText = "Sending...";
     submitBtn.disabled = true;
 
@@ -678,12 +680,12 @@
       } else {
         statusDiv.style.display = "block";
         statusDiv.style.color = "#dc3545";
-        statusDiv.innerText = "❌ " + (result.message || "Invalid Access Key. Please check your Web3Forms key.");
+        statusDiv.innerText = "❌ " + (result.message || "Something went wrong.");
       }
     } catch (error) {
       statusDiv.style.display = "block";
       statusDiv.style.color = "#dc3545";
-      statusDiv.innerText = "❌ Something went wrong. Please check your connection.";
+      statusDiv.innerText = "❌ Something went wrong. Please try again.";
     } finally {
       submitBtn.innerText = "SEND MESSAGE";
       submitBtn.disabled = false;
