@@ -140,10 +140,9 @@ nav a {
   text-decoration: none;
   white-space: nowrap; /* Keeps link text on one line */
 }
-/* Target section headings specifically */
-section h2, .section-title {
-  margin-top: 30px; /* Increase this value to push it further down */
-  padding-top: 10px;
+/* Add padding to the top of each section */
+section {
+  padding-top: 40px; /* Creates space between navbar and heading */
 }
 
         body {
