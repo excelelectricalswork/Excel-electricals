@@ -200,51 +200,42 @@ section,
         }
 
         /* HERO SECTION */
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            padding: 60px 7%;
-            background: radial-gradient(circle at top right, #161b22, #080a0d);
-            gap: 30px;
-        }
+       .hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 7%;
+  background: radial-gradient(circle at top right, #161b22, #080a0d);
+  gap: 30px;
+  width: 100%;
+}
 
-        .hero-content {
-            flex: 1 1 450px;
-        }
+.hero-content {
+  flex: 1 1 320px; /* Allows content to scale down to 320px on mobile */
+}
 
-        .hero-content h1 {
-            font-size: 38px;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 15px;
-        }
-
-        .hero-content h1 span {
-            color: #ffbd08;
-        }
-
-        .hero-content p {
-            color: #8b949e;
-            font-size: 16px;
-            margin-bottom: 25px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .button {
-            background-color: #ffbd08;
-            color: #0d1117;
-            padding: 12px 24px;
-            border-radius: 6px;
-            font-weight: 700;
-            display: inline-block;
-            transition: transform 0.2s, background-color 0.2s;
-        }
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap; /* Allows buttons to wrap on small mobile screens */
+  justify-content: center; /* Keeps buttons centered */
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+      .button {
+  background-color: #ffbd08;
+  color: #0d1117;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Gap between icon symbol and text */
+  text-decoration: none;
+  transition: transform 0.2s, background-color 0.2s;
+}
 
         .button:hover {
             background-color: #e5a800;
