@@ -434,6 +434,29 @@ section,
             color: #ffbd08;
             font-weight: 700;
         }
+        /* ADD THIS TO THE BOTTOM OF YOUR CSS */
+
+@media (max-width: 768px) {
+  /* Stack hero content on mobile */
+  .hero {
+    padding: 35px 5%;
+    text-align: center;
+  }
+
+  .hero-content {
+    flex: 1 1 100%;
+  }
+
+  /* Center buttons on mobile screen */
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  /* Full-width buttons for easy tapping */
+  .button {
+    width: 100%;
+  }
+}
 
        /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
