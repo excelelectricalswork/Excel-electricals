@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Main Landing Page -->
   <url>
     <loc>https://excelelectricals.co.in/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    
+    <!-- Image Metadata for Google Image Indexing -->
+    <image:image>
+      <image:loc>https://excelelectricals.co.in/75%20Hp.webp</image:loc>
+      <image:title>75 HP Motor Repair</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://excelelectricals.co.in/Inducton%20motor.webp</image:loc>
+      <image:title>Induction Motor Repair</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://excelelectricals.co.in/Motor.webp</image:loc>
+      <image:title>Electric Motor Service</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://excelelectricals.co.in/Field%20Winding.webp</image:loc>
+      <image:title>Motor Stator Winding</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://excelelectricals.co.in/Ex%20Rotor%20winding.webp</image:loc>
+      <image:title>Rotor Winding Repair</image:title>
+    </image:image>
   </url>
+
 </urlset>
