@@ -1,4 +1,4 @@
-<http>
+<DOCTYPE html>
   <html lang="en">
 <head>
   <meta name="robots" content="noindex, nofollow">
