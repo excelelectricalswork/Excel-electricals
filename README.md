@@ -616,31 +616,20 @@ section,
         <div class="section-title">
             <small>GET IN TOUCH</small>
             <h2>Contact Excel Electricals</h2>
+             <p>📍 Choondy, Aluva, Ernakulam, Kerala</p>
         </div>
         
-        <div class="hero-buttons">
+       <div class="contact-buttons">
   <a class="button" href="tel:+918590259451">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;">
-      <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-    </svg>
-    CALL NOW
+    <i class="fa-solid fa-phone"></i> CALL NOW
   </a>
-
   <a class="button" href="https://wa.me/918590259451" target="_blank">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;">
-      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm5.82 14.12c-.25.7-.85 1.25-1.57 1.31-.63.05-1.46.22-4.14-.88-3.42-1.41-5.63-4.88-5.8-5.11-.17-.23-1.39-1.85-1.39-3.53 0-1.68.88-2.5 1.19-2.84.31-.34.68-.43.91-.43.23 0 .46.01.66.01.21 0 .5-.08.78.59.28.68.96 2.35 1.04 2.52.08.17.14.37.03.59-.11.23-.17.37-.34.57-.17.2-.36.45-.52.61-.17.17-.35.35-.15.7.2.34.89 1.47 1.91 2.38 1.31 1.17 2.42 1.53 2.76 1.7.34.17.54.14.74-.08.2-.23.86-1.01 1.09-1.36.23-.34.46-.28.78-.17.31.11 2.01.95 2.35 1.12.34.17.57.25.65.39.08.14.08.82-.17 1.52z"/>
-    </svg>
-    WhatsApp
+    <i class="fa-brands fa-whatsapp"></i> WhatsApp
   </a>
-
   <a class="button" href="mailto:excelelectricalswork@gmail.com">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;">
-      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-    </svg>
-    Email
+    <i class="fa-solid fa-envelope"></i> Email
   </a>
 </div>
- <p>📍 Choondy, Aluva, Ernakulam, Kerala</p>
     </section>
     <!-- LOCATION MAP SECTION -->
 <section id="location" class="location-section">
