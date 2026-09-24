@@ -617,7 +617,7 @@ section,
             <small>GET IN TOUCH</small>
             <h2>Contact Excel Electricals</h2>
         </div>
-        <p>📍 Choondy, Aluva, Ernakulam, Kerala</p>
+        
         <div class="hero-buttons">
   <a class="button" href="tel:+918590259451">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;">
@@ -640,6 +640,7 @@ section,
     Email
   </a>
 </div>
+ <p>📍 Choondy, Aluva, Ernakulam, Kerala</p>
     </section>
     <!-- LOCATION MAP SECTION -->
 <section id="location" class="location-section">
