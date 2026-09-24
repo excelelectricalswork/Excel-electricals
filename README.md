@@ -435,40 +435,23 @@ section,
             font-weight: 700;
         }
 
-        /* ==========================================
-   RESPONSIVE AUTO-SCREEN (MOBILE & TABLET)
-   ========================================== */
+       /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
 
-@media (max-width: 768px) {
-  /* Stacks text and image vertically on mobile */
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 30px 5%;
-  }
+            nav a {
+                margin: 0 10px;
+            }
 
-  /* Adjusts main heading size for smaller screens */
-  .hero-content h1 {
-    font-size: 26px;
-  }
-
-  /* Stacks contact buttons neatly on narrow displays */
-  .hero-buttons {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  /* Makes each button stretch full width for easier tapping */
-  .hero-buttons .button {
-    width: 100%;
-  }
-
-  /* Ensures hero image stays within screen bounds */
-  .hero-image {
-    max-width: 100%;
-    height: auto;
-  }
-}
+            .hero-content h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
 <body>
 
     <!-- HEADER -->
