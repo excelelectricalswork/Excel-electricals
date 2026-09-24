@@ -202,13 +202,14 @@ section,
         /* HERO SECTION */
        .hero {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
   align-items: center;
   justify-content: space-between;
   padding: 60px 7%;
   background: radial-gradient(circle at top right, #161b22, #080a0d);
   gap: 30px;
   width: 100%;
+    min-height: 80vh; /* Fills screen height on large displays */
 }
 
 .hero-content {
@@ -251,6 +252,23 @@ section,
         .button-secondary:hover {
             background-color: #30363d;
         }
+         /* MOBILE BREAKPOINT */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 40px 5%;
+        text-align: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .button {
+        width: 100%; /* Stacks buttons nicely on phones */
+      }
+    }
+  </style>
+</head>
 
         /* FIXED HERO IMAGE FOR DESKTOP & MOBILE */
 .hero-image {
@@ -434,29 +452,7 @@ section,
             color: #ffbd08;
             font-weight: 700;
         }
-        /* ADD THIS TO THE BOTTOM OF YOUR CSS */
-
-@media (max-width: 768px) {
-  /* Stack hero content on mobile */
-  .hero {
-    padding: 35px 5%;
-    text-align: center;
-  }
-
-  .hero-content {
-    flex: 1 1 100%;
-  }
-
-  /* Center buttons on mobile screen */
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  /* Full-width buttons for easy tapping */
-  .button {
-    width: 100%;
-  }
-}
+       
 
        /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
