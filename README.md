@@ -202,14 +202,14 @@ section,
         /* HERO SECTION */
        .hero {
   display: flex;
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  flex-wrap: wrap; 
   align-items: center;
   justify-content: space-between;
   padding: 60px 7%;
   background: radial-gradient(circle at top right, #161b22, #080a0d);
   gap: 30px;
   width: 100%;
-    min-height: 80vh; /* Fills screen height on large displays */
+  
 }
 
 .hero-content {
