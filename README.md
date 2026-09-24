@@ -252,23 +252,7 @@ section,
         .button-secondary:hover {
             background-color: #30363d;
         }
-         /* MOBILE BREAKPOINT */
-    @media (max-width: 768px) {
-      .hero {
-        padding: 40px 5%;
-        text-align: center;
-      }
-
-      .hero-buttons {
-        justify-content: center;
-      }
-
-      .button {
-        width: 100%; /* Stacks buttons nicely on phones */
-      }
-    }
-  </style>
-</head>
+         
 
         /* FIXED HERO IMAGE FOR DESKTOP & MOBILE */
 .hero-image {
