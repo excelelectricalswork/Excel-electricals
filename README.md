@@ -169,7 +169,7 @@ section,
 
         /* HEADER & NAVIGATION */
         header {
-            background: #2ea043;
+            background: #58a6ff;
             padding: 15px 7%;
             position: sticky;
             top: 0;
