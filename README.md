@@ -150,11 +150,44 @@ section,
 [id] {
   scroll-margin-top: 100px; /* Adjust height according to navbar height */
 }
-       body {
+    /* 1. Set the overall page background & dark text */
+body {
     font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
-    background-color: #e6f2ff; /* Light Blue Background */
-    color: #1a202c;            /* Dark Text Color for visibility */
+    background-color: #e0f2fe; /* Light Blue Background */
+    color: #0f172a;            /* Dark Navy Text for readability */
     line-height: 1.6;
+}
+
+/* 2. Lighten the main container/cards */
+section, 
+.container, 
+.card, 
+.service-card, 
+.box, 
+[id] {
+    background-color: #f0f9ff !important; /* Soft Light Blue / Off-white for cards */
+    color: #0f172a !important;            /* Dark text */
+}
+
+/* 3. Style Headings for high contrast */
+h1, h2, h3, h4, h5, h6, .section-title {
+    color: #0369a1 !important; /* Deep Blue Headings */
+}
+
+/* 4. Fix paragraphs & list text so they aren't faint white */
+p, li, span {
+    color: #334155 !important; /* Dark Grey / Slate Text */
+}
+
+/* 5. Keep the Navbar clean */
+header, nav, .navbar {
+    background-color: #0f172a; /* Dark Navbar to keep orange logo visible */
+    color: #ffffff;
+}
+
+/* 6. Navigation links text color */
+nav a, .nav-links a {
+    color: #ffffff !important;
 }
 
         a {
