@@ -256,52 +256,23 @@ section,
         }
          
 
-     /* 1. Reset root elements to fill 100% monitor width */
-html, body {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    background-color: #1a202c !important; /* Matches dark body background */
-    overflow-x: hidden;
+   /* FIXED HERO IMAGE FOR DESKTOP & MOBILE */
+.hero-image {
+    flex: 1 1 350px;
+    max-width: 450px; /* Limits how wide the image box can stretch on desktop */
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #30363d;
 }
 
-/* 2. Remove fixed width and padding from root wrappers */
-.wrapper, .main-wrapper, .card, .container, main {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-}
-
-/* 3. Make header full width */
-header, navbar, .navbar {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 20px 5% !important;
-}
-
-/* 4. Make hero section stretch wall-to-wall */
-.hero, section {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 40px 5% !important;
-    margin: 0 !important;
-}
-
-/* 5. Allow grid image cards in lower sections to expand */
-.grid, .services-grid, .cards-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-    gap: 24px !important;
-    width: 100% !important;
-    max-width: 1400px !important;
-    margin: 0 auto !important;
+.hero-image img {
+    width: 100%;
+    height: 380px; /* Sets a consistent height on desktop */
+    object-fit: cover; /* Crops and fills the box cleanly without black space */
+    object-position: center;
+    display: block;
 }
         /* SECTIONS COMMON */
         section {
