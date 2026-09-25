@@ -201,20 +201,40 @@ section,
 
         /* HERO SECTION */
       
-       .hero {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 60px 4%; /* Reduced side padding so content spreads wider */
-    background: radial-gradient(circle at top right, #161b22, #080a0d);
-    gap: 30px;
-    width: 100%;
-    box-sizing: border-box;
+     /* Force parent wrappers to expand full width */
+.container, main, body, html {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Make the header stretch full width */
+header {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 15px 4% !important;
+    box-sizing: border-box !important;
+}
+
+/* Force hero section to stretch wall-to-wall */
+.hero {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 60px 4% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    justify-content: space-between !important;
 }
 
 .hero-content {
-    flex: 1 1 500px; /* Allows text section to expand dynamically */
+    flex: 1 1 600px !important;
+    max-width: 100% !important;
+}
+
+.hero-image {
+    flex: 1 1 500px !important;
+    max-width: 650px !important;
 }
 
 .hero-buttons {
