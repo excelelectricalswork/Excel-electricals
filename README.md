@@ -213,11 +213,10 @@ section,
   
 }
 
-/* 3. Scale up content blocks inside hero */
 .hero-content {
-    flex: 1 1 50% !important;
-    max-width: 100% !important;
+  flex: 1 1 320px; /* Allows content to scale down to 320px on mobile */
 }
+
 
 .hero-buttons {
   display: flex;
@@ -257,46 +256,53 @@ section,
         }
          
 
-       /* 1. Reset root margins & allow 100% viewport width */
+     /* 1. Reset root elements to fill 100% monitor width */
 html, body {
     margin: 0 !important;
     padding: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
+    background-color: #1a202c !important; /* Matches dark body background */
     overflow-x: hidden;
 }
 
-/* 2. Make the Hero section stretch edge-to-edge */
-.hero {
-    width: 100vw !important; /* Forces 100% Viewport Width */
-    max-width: 100vw !important;
-    margin: 0 !important;
-    padding: 60px 5% !important;
-    box-sizing: border-box !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-}
-
-/* 3. Scale up content blocks inside hero */
-.hero-content {
-    flex: 1 1 50% !important;
+/* 2. Remove fixed width and padding from root wrappers */
+.wrapper, .main-wrapper, .card, .container, main {
+    width: 100% !important;
     max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
 }
 
-.hero-image {
-    flex: 1 1 45% !important;
-    max-width: 700px !important;
+/* 3. Make header full width */
+header, navbar, .navbar {
     width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 20px 5% !important;
 }
 
-.hero-image img {
+/* 4. Make hero section stretch wall-to-wall */
+.hero, section {
     width: 100% !important;
-    height: auto !important;
-    max-height: 500px !important;
-    object-fit: cover !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 40px 5% !important;
+    margin: 0 !important;
 }
 
+/* 5. Allow grid image cards in lower sections to expand */
+.grid, .services-grid, .cards-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 24px !important;
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+}
         /* SECTIONS COMMON */
         section {
             padding: 60px 7%;
