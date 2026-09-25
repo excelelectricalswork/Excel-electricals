@@ -150,12 +150,12 @@ section,
 [id] {
   scroll-margin-top: 100px; /* Adjust height according to navbar height */
 }
-        body {
-            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
-            background-color: #080a0d;
-            color: #f0f6fc;
-            line-height: 1.6;
-        }
+       body {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    background-color: #e6f2ff; /* Light Blue Background */
+    color: #1a202c;            /* Dark Text Color for visibility */
+    line-height: 1.6;
+}
 
         a {
             text-decoration: none;
