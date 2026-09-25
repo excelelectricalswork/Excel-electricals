@@ -200,20 +200,21 @@ section,
         }
 
         /* HERO SECTION */
+      
        .hero {
-  display: flex;
-  flex-wrap: wrap; 
-  align-items: center;
-  justify-content: space-between;
-  padding: 60px 7%;
-  background: radial-gradient(circle at top right, #161b22, #080a0d);
-  gap: 30px;
-  width: 100%;
-  
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 4%; /* Reduced side padding so content spreads wider */
+    background: radial-gradient(circle at top right, #161b22, #080a0d);
+    gap: 30px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-content {
-  flex: 1 1 320px; /* Allows content to scale down to 320px on mobile */
+    flex: 1 1 500px; /* Allows text section to expand dynamically */
 }
 
 .hero-buttons {
