@@ -213,8 +213,10 @@ section,
   
 }
 
+/* 3. Scale up content blocks inside hero */
 .hero-content {
-  flex: 1 1 320px; /* Allows content to scale down to 320px on mobile */
+    flex: 1 1 50% !important;
+    max-width: 100% !important;
 }
 
 .hero-buttons {
@@ -255,23 +257,44 @@ section,
         }
          
 
-        /* FIXED HERO IMAGE FOR DESKTOP & MOBILE */
+       /* 1. Reset root margins & allow 100% viewport width */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden;
+}
+
+/* 2. Make the Hero section stretch edge-to-edge */
+.hero {
+    width: 100vw !important; /* Forces 100% Viewport Width */
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 60px 5% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+/* 3. Scale up content blocks inside hero */
+.hero-content {
+    flex: 1 1 50% !important;
+    max-width: 100% !important;
+}
+
 .hero-image {
-    flex: 1 1 350px;
-    max-width: 450px; /* Limits how wide the image box can stretch on desktop */
-    width: 100%;
-    margin: 0 auto;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #30363d;
+    flex: 1 1 45% !important;
+    max-width: 700px !important;
+    width: 100% !important;
 }
 
 .hero-image img {
-    width: 100%;
-    height: 380px; /* Sets a consistent height on desktop */
-    object-fit: cover; /* Crops and fills the box cleanly without black space */
-    object-position: center;
-    display: block;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 500px !important;
+    object-fit: cover !important;
 }
 
         /* SECTIONS COMMON */
