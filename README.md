@@ -276,23 +276,57 @@ header {
          
 
         /* FIXED HERO IMAGE FOR DESKTOP & MOBILE */
+/* Remove default margins and padding from browser window */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden;
+}
+
+/* Remove side constraints on container wrappers */
+.container, main, section, header, footer {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Stretch the navbar header to full screen width */
+header {
+    padding: 20px 4% !important;
+}
+
+/* Stretch the dark hero container to fill the full monitor screen */
+.hero {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 60px 5% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+/* Let the left content block take up available space */
+.hero-content {
+    flex: 1 1 55% !important;
+    max-width: 100% !important;
+}
+
+/* Allow the motor image box to stretch larger */
 .hero-image {
-    flex: 1 1 350px;
-    max-width: 450px; /* Limits how wide the image box can stretch on desktop */
-    width: 100%;
-    margin: 0 auto;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #30363d;
+    flex: 0 1 40% !important;
+    max-width: 650px !important;
+    width: 100% !important;
 }
 
 .hero-image img {
-    width: 100%;
-    height: 380px; /* Sets a consistent height on desktop */
-    object-fit: cover; /* Crops and fills the box cleanly without black space */
-    object-position: center;
-    display: block;
-}
+    width: 100% !important;
+    height: auto !important;
+    max-height: 480px !important;
+    object-fit: cover !important;
 
         /* SECTIONS COMMON */
         section {
