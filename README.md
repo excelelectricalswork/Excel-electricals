@@ -472,6 +472,13 @@ section,
                <a href="#terms">Terms</a>
         </nav>
     </header>
+    <header>...</header>
+<section class="hero">...</section>
+
+<!-- Place container wrapper only around inner sections if needed -->
+<div class="container">
+    <!-- Rest of your website sections -->
+</div>
 
     <!-- HERO SECTION -->
     <section class="hero" id="home">
