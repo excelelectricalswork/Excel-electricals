@@ -983,7 +983,7 @@
             <span class="stars">★★★★★</span>
             <span style="color: var(--text-sub); font-size: 0.9rem;">Google Verified</span>
         </div>
-        <p style="color: var(--text-sub); font-size: 0.95rem; font-weight: 600;">&copy; 2026 EXCEL ELECTRICALS | Choondy, Aluva, Ernakulam, Kerala | GSTIN: 32AAGPX3837Q1ZZ</p>
+        <p style="color: var(--text-sub); font-size: 0.95rem; font-weight: 600;">&copy; © 2020–2026 Excel Electricals. All Rights Reserved| Choondy, Aluva, Ernakulam, Kerala | GSTIN: 32AAGPX3837Q1ZZ</p>
     </footer>
 
     <!-- JavaScript -->
