@@ -921,36 +921,45 @@
         </div>
     </section>
 
-    <!-- SERVICE REQUEST FORM SECTION -->
-    <section id="request">
-        <div class="section-header">
-            <small>Online Booking</small>
-            <h2>Submit a Service Request</h2>
+  <!-- SERVICE REQUEST FORM SECTION -->
+<section id="request">
+    <div class="section-header">
+        <small>Online Booking</small>
+        <h2>Submit a Service Request</h2>
+    </div>
+    <div style="max-width: 650px; margin: 0 auto;">
+        <div class="form-card">
+            <form id="directMsgForm">
+                <!-- Web3Forms Access Key -->
+                <input type="hidden" name="access_key" value="823e3a3d-8f8f-474a-ba21-2c91b05bee2a">
+
+                <!-- Botcheck Honeypot to block spam -->
+                <input type="checkbox" name="botcheck" style="display: none;">
+
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" name="name" id="custName" class="form-control" placeholder="Enter full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" class="form-control" placeholder="Enter 10-digit mobile number" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Motor Issue / Equipment Details</label>
+                    <textarea name="message" rows="4" class="form-control" placeholder="Describe HP, motor brand, or motor fault..." required></textarea>
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                    <i class="fa-solid fa-paper-plane"></i> Send Request
+                </button>
+
+                <div id="formStatus" style="display: none; margin-top: 15px; text-align: center; font-weight: 700; font-size: 1.05rem;"></div>
+            </form>
         </div>
-        <div style="max-width: 650px; margin: 0 auto;">
-            <div class="form-card">
-                <form id="directMsgForm">
-  <input type="hidden" name="access_key" value="823e3a3d-8f8f-474a-ba21-2c91b05bee2a">
-                    <div class="form-group">
-                        <label>Your Name</label>
-                        <input type="text" name="name" class="form-control" placeholder="Enter full name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Phone Number</label>
-                        <input type="tel" name="phone" class="form-control" placeholder="Enter 10-digit mobile number" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Motor Issue / Equipment Details</label>
-                        <textarea name="message" rows="4" class="form-control" placeholder="Describe HP, motor brand, or motor fault..." required></textarea>
-                    </div>
-                    <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                        <i class="fa-solid fa-paper-plane"></i> Send Request
-                    </button>
-                    <div id="formStatus" style="display: none; margin-top: 15px; text-align: center; font-weight: 700; font-size: 1.05rem;"></div>
-                </form>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
     <!-- FLOATING QUICK BAR -->
     <div class="floating-bar">
