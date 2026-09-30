@@ -961,15 +961,57 @@
     </div>
 </section>
 
-    <!-- FLOATING QUICK BAR -->
-    <div class="floating-bar">
-        <a href="tel:+918590259451" class="float-link float-gold"><i class="fa-solid fa-phone"></i> Call Workshop</a>
-        <span style="color: rgba(255,255,255,0.4);">|</span>
-        <a href="https://wa.me/918590259451" class="float-link" target="_blank"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp</a>
-        <span style="color: rgba(255,255,255,0.4);">|</span>
-        <a href="mailto:excelelectricalswork@gmail.com" class="float-link float-blue"><i class="fa-solid fa-envelope"></i> Email Us</a>
-    </div>
+   /* Floating Vertical Bar on Right Side */
+.floating-bar {
+    position: fixed;
+    right: 20px;            /* Locks to the right edge */
+    top: 50%;               /* Centers vertically */
+    transform: translateY(-50%); /* Keeps exact middle alignment */
+    display: flex;
+    flex-direction: column; /* Stacks buttons vertically */
+    gap: 12px;              /* Spacing between buttons */
+    z-index: 9999;          /* Keeps buttons above all page elements */
+}
 
+/* Base button styles */
+.floating-bar .float-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 30px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Button colors */
+.float-gold { background-color: #f39c12; }
+.float-whatsapp { background-color: #25d366; }
+.float-email { background-color: #3498db; }
+
+/* Hover animations */
+.floating-bar .float-link:hover {
+    transform: translateX(-5px); /* Subtle slide left on hover */
+    filter: brightness(1.1);
+}
+
+/* Mobile Responsiveness (hides text on tiny screens to save space) */
+@media (max-width: 600px) {
+    .floating-bar {
+        right: 10px;
+    }
+    .floating-bar .float-link span {
+        display: none; /* Shows icon only on small screens */
+    }
+    .floating-bar .float-link {
+        padding: 12px;
+        border-radius: 50%;
+    }
+}
     <!-- LIGHTBOX MODAL POPUP -->
     <div class="lightbox-modal" id="lightboxModal">
         <span class="lightbox-close" id="lightboxClose">&times;</span>
