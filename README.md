@@ -826,22 +826,18 @@
             </div>
 
             <!-- CARD 3 -->
-           <div class="service-card">
-    <div class="service-image">
-        <img src="Ex Rotor winding.webp" alt="Exciter Rotor Rewinding">
-    </div>
-    <div class="service-content">
-        <div class="service-header">
-            <span class="icon-box">
-                <i class="fa-solid fa-gears"></i>
-            </span>
-            <h3>Exciter Rotor Rewinding</h3>
-        </div>
-        <p>
-            Complete 3-phase alternator exciter rotor rewinding, double-coated enamel copper wire replacement, rotating diode bridge testing, Class H insulation, and Megger testing.
-        </p>
-    </div>
-</div>
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="Ex Rotor winding.webp" alt="Excetor Rotor Rewinding" class="zoomable-img">
+                </div>
+                <div class="card-body">
+                    <div class="service-icon-box">
+                        <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3 style="margin: 0;">Excetor Rotor Rewinding</h3>
+                    </div>
+                    <p> Complete 3-phase alternator exciter rotor rewinding, double-coated enamel copper wire replacement, rotating diode bridge testing, Class H insulation, and Megger testing.</p>
+                </div>
+            </div>
 
             <!-- CARD 4 -->
             <div class="card">
