@@ -728,7 +728,7 @@
     <section class="hero" id="home">
         <div>
             <div class="hero-badge">
-                <i class="fa-solid fa-shield-halved"></i> Certified Motor Workshop • Choondy, Aluva
+                <i class="fa-solid fa-shield-halved"></i> Complete Motor Rewinding Solutions
             </div>
             <h1>EXPERT ELECTRIC <span>MOTOR WINDING</span> & REPAIR</h1>
             <p>Reliable stator rewinding, coil varnishing, dynamic rotor testing, and complete motor repairs with guaranteed super-enameled copper wire.</p>
