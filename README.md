@@ -832,7 +832,7 @@
                 </div>
                 <div class="card-body">
                     <div class="service-icon-box">
-                        <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
                         <h3 style="margin: 0;">Excetor Rotor Rewinding</h3>
                     </div>
                     <p> Complete 3-phase alternator exciter rotor rewinding, double-coated enamel copper wire replacement, rotating diode bridge testing, Class H insulation, and Megger testing.</p>
