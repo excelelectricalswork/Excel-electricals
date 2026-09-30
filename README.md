@@ -734,8 +734,8 @@
             <p>Reliable stator rewinding, coil varnishing, dynamic rotor testing, and complete motor repairs with guaranteed super-enameled copper wire.</p>
             <div class="hero-buttons">
                 <a href="tel:+918590259451" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Workshop</a>
-                <a href="https://wa.me/918590259451" class="btn btn-outline" target="_blank"><i class="fa-brands fa-whatsapp" style="color: #22c55e;"></i> WhatsApp Chat</a>
-                <a href="mailto:excelelectricalswork@gmail.com" class="btn btn-email"><i class="fa-solid fa-envelope" style="color: #38bdf8;"></i> Email Us</a>
+                <a href="https://wa.me/918590259451" class="btn btn-outline" target="_blank"><i class="fa-brands fa-whatsapp" style="color: #FFD700;"></i> WhatsApp Chat</a>
+                <a href="mailto:excelelectricalswork@gmail.com" class="btn btn-email"><i class="fa-solid fa-envelope" style="color: #FFD700;"></i> Email Us</a>
             </div>
         </div>
         <div>
